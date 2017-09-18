@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="org.libra" module="mybatis-generator-gradle-plugin" revision="0.0.1-SNAPSHOT" status="integration" default="true" publication="20170918111542"/>
+  <info organisation="org.libra" module="mybatis-generator-gradle-plugin" revision="0.0.1-SNAPSHOT" status="integration" default="true" publication="20170918114419"/>
   <configurations>
     <conf name="apiElements" visibility="private" extends="runtime"/>
     <conf name="archives" visibility="public"/>

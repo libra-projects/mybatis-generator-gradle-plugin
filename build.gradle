@@ -21,18 +21,12 @@ version = '0.0.1-SNAPSHOT'
 repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    maven {
-         url '../repo'
-    }
     jcenter()
 }
 buildscript {
     repositories {
         // Use 'jcenter' for resolving your dependencies.
         // You can declare any Maven/Ivy/file repository here.
-        maven {
-            url '../repo'
-        }
         jcenter()
     }
 }
@@ -47,7 +41,7 @@ dependencies {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: uri('../repo')) //定义本地maven仓库的地址
+            repository(url: uri('./repo')) //定义本地maven仓库的地址
         }
     }
 }
