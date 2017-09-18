@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="mybatis-generator-gradle-plugin" module="testMybatis" revision="unspecified" status="integration" default="true" publication="20170917175555"/>
+  <info organisation="mybatis-generator-gradle-plugin" module="testMybatisGeneratePlugin" revision="unspecified" status="integration" default="true" publication="20170918111542"/>
   <configurations>
     <conf name="apiElements" visibility="private" extends="runtime"/>
     <conf name="archives" visibility="public"/>
@@ -22,6 +22,6 @@
     <conf name="testRuntimeOnly" visibility="private" extends="runtimeOnly"/>
   </configurations>
   <publications>
-    <artifact name="testMybatis" type="jar" ext="jar" conf="apiElements,archives,runtime,runtimeElements"/>
+    <artifact name="testMybatisGeneratePlugin" type="jar" ext="jar" conf="apiElements,archives,runtime,runtimeElements"/>
   </publications>
 </ivy-module>

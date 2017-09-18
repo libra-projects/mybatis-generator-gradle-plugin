@@ -33,7 +33,11 @@ public class MybatisGeneratorTask extends DefaultTask {
     @TaskAction
     void start() {
         MybatisGeneratorExtension extension = (MybatisGeneratorExtension)getProject().getExtensions().getByName(MybatisGeneratorPlugin.EXTENSION_NAME);
-        File file = new File(extension.getGeneratorXMLPath());
+        String generatorXMLPath = extension.getGeneratorXMLPath();
+        if (generatorXMLPath == null) {
+            throw new RuntimeException("Must specialize generatorXMLPath in mybatisGenerator extension");
+        }
+        File file = new File(generatorXMLPath);
         List<String> warnigs = new ArrayList<>();
         ConfigurationParser configurationParser = new ConfigurationParser(warnigs);
         Configuration configuration = null;

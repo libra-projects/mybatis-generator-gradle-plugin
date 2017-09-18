@@ -1,50 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.ele.ci.mybatis.mapper.MiPushSwitchModelMapper">
-  <resultMap id="BaseResultMap" type="me.ele.ci.mybatis.model.MiPushSwitchModel">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.ele.ci.mybatis.mapper.MiPushSwitchModelMapper" >
+  <resultMap id="BaseResultMap" type="me.ele.ci.mybatis.model.MiPushSwitchModel" >
     <!--
       WARNING - @mbggenerated
     -->
-    <id column="prd_bom_id" jdbcType="INTEGER" property="prdBomId" />
-    <result column="prd_p_material_num" jdbcType="VARCHAR" property="prdPMaterialNum" />
-    <result column="prd_p_material_desc" jdbcType="VARCHAR" property="prdPMaterialDesc" />
-    <result column="prd_p_material_version" jdbcType="VARCHAR" property="prdPMaterialVersion" />
-    <result column="prd_bom_use" jdbcType="VARCHAR" property="prdBomUse" />
-    <result column="prd_select_bom" jdbcType="VARCHAR" property="prdSelectBom" />
-    <result column="prd_material_line_num" jdbcType="VARCHAR" property="prdMaterialLineNum" />
-    <result column="prd_material_num" jdbcType="VARCHAR" property="prdMaterialNum" />
-    <result column="prd_material_desc" jdbcType="VARCHAR" property="prdMaterialDesc" />
-    <result column="prd_material_count" jdbcType="VARCHAR" property="prdMaterialCount" />
-    <result column="prd_material_unit" jdbcType="VARCHAR" property="prdMaterialUnit" />
-    <result column="prd_material_replace_group" jdbcType="VARCHAR" property="prdMaterialReplaceGroup" />
-    <result column="prd_material_percent" jdbcType="VARCHAR" property="prdMaterialPercent" />
-    <result column="created_by" jdbcType="INTEGER" property="createdBy" />
-    <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
-    <result column="last_updated_by" jdbcType="INTEGER" property="lastUpdatedBy" />
-    <result column="last_updated_date" jdbcType="TIMESTAMP" property="lastUpdatedDate" />
+    <id column="prd_bom_id" property="prdBomId" jdbcType="INTEGER" />
+    <result column="prd_p_material_num" property="prdPMaterialNum" jdbcType="VARCHAR" />
+    <result column="prd_p_material_desc" property="prdPMaterialDesc" jdbcType="VARCHAR" />
+    <result column="prd_p_material_version" property="prdPMaterialVersion" jdbcType="VARCHAR" />
+    <result column="prd_bom_use" property="prdBomUse" jdbcType="VARCHAR" />
+    <result column="prd_select_bom" property="prdSelectBom" jdbcType="VARCHAR" />
+    <result column="prd_material_line_num" property="prdMaterialLineNum" jdbcType="VARCHAR" />
+    <result column="prd_material_num" property="prdMaterialNum" jdbcType="VARCHAR" />
+    <result column="prd_material_desc" property="prdMaterialDesc" jdbcType="VARCHAR" />
+    <result column="prd_material_count" property="prdMaterialCount" jdbcType="VARCHAR" />
+    <result column="prd_material_unit" property="prdMaterialUnit" jdbcType="VARCHAR" />
+    <result column="prd_material_replace_group" property="prdMaterialReplaceGroup" jdbcType="VARCHAR" />
+    <result column="prd_material_percent" property="prdMaterialPercent" jdbcType="VARCHAR" />
+    <result column="created_by" property="createdBy" jdbcType="INTEGER" />
+    <result column="created_date" property="createdDate" jdbcType="TIMESTAMP" />
+    <result column="last_updated_by" property="lastUpdatedBy" jdbcType="INTEGER" />
+    <result column="last_updated_date" property="lastUpdatedDate" jdbcType="TIMESTAMP" />
   </resultMap>
-  <sql id="Example_Where_Clause">
+  <sql id="Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
     -->
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -55,28 +55,28 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause">
+  <sql id="Update_By_Example_Where_Clause" >
     <!--
       WARNING - @mbggenerated
     -->
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -87,7 +87,7 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     <!--
       WARNING - @mbggenerated
     -->
@@ -96,104 +96,104 @@
     prd_material_unit, prd_material_replace_group, prd_material_percent, created_by, 
     created_date, last_updated_by, last_updated_date
   </sql>
-  <select id="selectByExample" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria" resultMap="BaseResultMap">
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria" >
     <!--
       WARNING - @mbggenerated
     -->
     select
-    <if test="distinct">
+    <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
     from prd_bom
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null">
+    <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria">
+  <delete id="deleteByExample" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria" >
     <!--
       WARNING - @mbggenerated
     -->
     delete from prd_bom
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <select id="countByExample" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="me.ele.ci.mybatis.model.MiPushSwitchModelCriteria" resultType="java.lang.Integer" >
     <!--
       WARNING - @mbggenerated
     -->
     select count(*) from prd_bom
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+  <update id="updateByExampleSelective" parameterType="map" >
     <!--
       WARNING - @mbggenerated
     -->
     update prd_bom
-    <set>
-      <if test="record.prdBomId != null">
+    <set >
+      <if test="record.prdBomId != null" >
         prd_bom_id = #{record.prdBomId,jdbcType=INTEGER},
       </if>
-      <if test="record.prdPMaterialNum != null">
+      <if test="record.prdPMaterialNum != null" >
         prd_p_material_num = #{record.prdPMaterialNum,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdPMaterialDesc != null">
+      <if test="record.prdPMaterialDesc != null" >
         prd_p_material_desc = #{record.prdPMaterialDesc,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdPMaterialVersion != null">
+      <if test="record.prdPMaterialVersion != null" >
         prd_p_material_version = #{record.prdPMaterialVersion,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdBomUse != null">
+      <if test="record.prdBomUse != null" >
         prd_bom_use = #{record.prdBomUse,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdSelectBom != null">
+      <if test="record.prdSelectBom != null" >
         prd_select_bom = #{record.prdSelectBom,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialLineNum != null">
+      <if test="record.prdMaterialLineNum != null" >
         prd_material_line_num = #{record.prdMaterialLineNum,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialNum != null">
+      <if test="record.prdMaterialNum != null" >
         prd_material_num = #{record.prdMaterialNum,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialDesc != null">
+      <if test="record.prdMaterialDesc != null" >
         prd_material_desc = #{record.prdMaterialDesc,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialCount != null">
+      <if test="record.prdMaterialCount != null" >
         prd_material_count = #{record.prdMaterialCount,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialUnit != null">
+      <if test="record.prdMaterialUnit != null" >
         prd_material_unit = #{record.prdMaterialUnit,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialReplaceGroup != null">
+      <if test="record.prdMaterialReplaceGroup != null" >
         prd_material_replace_group = #{record.prdMaterialReplaceGroup,jdbcType=VARCHAR},
       </if>
-      <if test="record.prdMaterialPercent != null">
+      <if test="record.prdMaterialPercent != null" >
         prd_material_percent = #{record.prdMaterialPercent,jdbcType=VARCHAR},
       </if>
-      <if test="record.createdBy != null">
+      <if test="record.createdBy != null" >
         created_by = #{record.createdBy,jdbcType=INTEGER},
       </if>
-      <if test="record.createdDate != null">
+      <if test="record.createdDate != null" >
         created_date = #{record.createdDate,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.lastUpdatedBy != null">
+      <if test="record.lastUpdatedBy != null" >
         last_updated_by = #{record.lastUpdatedBy,jdbcType=INTEGER},
       </if>
-      <if test="record.lastUpdatedDate != null">
+      <if test="record.lastUpdatedDate != null" >
         last_updated_date = #{record.lastUpdatedDate,jdbcType=TIMESTAMP},
       </if>
     </set>
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map">
+  <update id="updateByExample" parameterType="map" >
     <!--
       WARNING - @mbggenerated
     -->
@@ -215,7 +215,7 @@
       created_date = #{record.createdDate,jdbcType=TIMESTAMP},
       last_updated_by = #{record.lastUpdatedBy,jdbcType=INTEGER},
       last_updated_date = #{record.lastUpdatedDate,jdbcType=TIMESTAMP}
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>

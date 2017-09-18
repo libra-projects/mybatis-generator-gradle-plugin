@@ -10,7 +10,7 @@ public class MybatisGeneratorPlugin implements Plugin<Project> {
 
     public static final String EXTENSION_NAME = "mybatisGenerator";
 
-    public static final String TASK_NAME = "generateMybatis";
+    public static final String TASK_NAME = "runMybatisGenerator";
 
     @Override
     public void apply(Project project) {
